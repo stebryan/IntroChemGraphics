@@ -71,3 +71,8 @@ function draw() {
 
 }
 
+function touchMoved() {
+  // Optional: Add specific touch interaction logic here if needed
+  return false; // This line is key to stopping default scrolling
+}
+
