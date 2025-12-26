@@ -13,7 +13,7 @@ let waterHeight = 400;
 let units = [];
 
 function preload() {
-  Chewy = loadFont('assets/Chewy-Regular.ttf');
+  Chewy = loadFont('assets/ComicNeue-Bold.ttf');
   ComicNeue = loadFont('assets/ComicNeue-Regular.ttf');
   myCylinderPic = loadImage('assets/cylinder.png');
   waterPic = loadImage('assets/water.png');
