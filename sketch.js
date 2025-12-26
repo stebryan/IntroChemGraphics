@@ -87,3 +87,10 @@ function touchMoved() {
   return false; // This line is key to stopping default scrolling
 }
 
+function windowResized() {
+  if (windowWidth < 500) {
+    resizeCanvas(windowWidth, (1.8) * windowWidth);
+  } else {
+    resizeCanvas(500, 900);
+  }
+}
