@@ -22,7 +22,11 @@ function preload() {
 
 function setup() {
   fill(255);
-  createCanvas(500, 900);
+  if (windowWidth < 500) {
+    createCanvas(windowWidth, (1.8) * windowWidth);
+  } else {
+    createCanvas(500, 900);
+  }
   gui = createGui();
   units.push(new unitSystem(100, 10, 'mL', 1)); // scale is pixels per major tic unit (10mL here)
   units.push(new unitSystem(296, 1, 'fl oz', 0.03381));
