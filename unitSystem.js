@@ -57,7 +57,7 @@ class unitSystem {
 
         // Display the converted amount with the unit
         fill(0);
-        text(formattedAmount + " " + this.unit, 100, 300);
+        text(formattedAmount + " " + this.unit, 50, 400);
 
     }
 }

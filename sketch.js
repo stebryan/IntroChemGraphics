@@ -5,7 +5,6 @@ let ComicNeue;
 let mL;
 let oz;
 let flozBtn;
-//let mLBtn;
 let tspBtn;
 let slider;
 let gui;
@@ -28,9 +27,8 @@ function setup() {
   units.push(new unitSystem(100, 10, 'mL', 1)); // scale is pixels per major tic unit (10mL here)
   units.push(new unitSystem(296, 1, 'fl oz', 0.03381));
   units.push(new unitSystem(49.3, 1, 'tsp', 0.203));
-  flozBtn = createButton("convert to oz", 50, 50);
-  //mLBtn = createButton("convert to mL", 50, 100);
-  tspBtn = createButton("convert to tsp", 50, 100);
+  flozBtn = createButton("convert to oz", 50, 500);
+  tspBtn = createButton("convert to tsp", 50, 550);
   slider = createSliderV("slider", 350, 300, 30, 300, 0, 350);
 }
 
@@ -40,8 +38,17 @@ function draw() {
   image(waterPic, 117, waterHeight, 318, 415);
   image(myCylinderPic, 50, 50, 400, 750);
 
+  push();
+  textSize(20);
+  textFont(ComicNeue);
+  textWrap(WORD);
+  fill(0);
+  text("Use the slider on the right to change the amount of water in the graduated cylinder. Then hold down the buttons below to see this measurement in different units.", 50, 50, 450, 200);
+  pop();
+
   // Add a background bar at the bottom
   push();
+  fill(255);
   noStroke();
   rect(0, 780, 500, 120);
   pop();
