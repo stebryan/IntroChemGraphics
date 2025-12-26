@@ -21,30 +21,39 @@ function preload() {
 }
 
 function setup() {
-  fill(255);
+  describe('A 2-D drawing of a graduated cylinder containing water with a meniscus.');
+
+  fill(255); //white background
   if (windowWidth < 500) {
     createCanvas(windowWidth, (1.8) * windowWidth);
   } else {
     createCanvas(500, 900);
-  }
+  } //changes canvase size based on device if the device is small
+
   gui = createGui();
+
   units.push(new unitSystem(100, 10, 'mL', 1)); // scale is pixels per major tic unit (10mL here)
   units.push(new unitSystem(296, 1, 'fl oz', 0.03381));
   units.push(new unitSystem(49.3, 1, 'tsp', 0.203));
+  describeElement('convert to oz', 'A button that changes the tick marks amd measurement untils to fluid ounces when held down');
   flozBtn = createButton("convert to oz", width / 10, width, 128 * width / 500, 32 * width / 500);
   flozBtn.setStyle({
     textSize: 16 * width / 500
   });
+  describeElement('convert to tsp', 'A button that changes the tick marks amd measurement untils to teaspoons when held down');
   tspBtn = createButton("convert to tsp", width / 10, 1.1 * width, 128 * width / 500, 32 * width / 500);
   tspBtn.setStyle({
     textSize: 16 * width / 500
   });
+  describeElement('Slider', 'The slider controls the water level in the graduated cylinder and changes the amount displayed.')
   slider = createSliderV("slider", 0.7 * width, 0.6 * width, 0.06 * width, width / 2, 0, 350 * width / 500);
+
+
 }
 
 function draw() {
   background(255);
-  //waterHeight = 600 * width / 500;
+
   image(waterPic, 0.234 * width, waterHeight, 318 * width / 500, 415 * width / 500);
   image(myCylinderPic, width / 10, width / 10, 0.8 * width, 1.5 * width);
 

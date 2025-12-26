@@ -9,6 +9,9 @@ class unitSystem {
     }
 
     showTics() {
+        describeElement('Large tick Marks', `Large tick marks on the graducated cylinder every ${this.text} ${this.unit}`);
+        let smallTic = this.text / 10;
+        describeElement('Small tick Marks', `Small tick marks on the graducated cylinder every ${smallTic} ${this.unit}`);
         fill(0);
         for (let i = 0; i < this.max; i++) {
             let largeTic = 760 - this.scale * (i + 1);
@@ -56,6 +59,7 @@ class unitSystem {
         }
 
         // Display the converted amount with the unit
+        describeElement('Amount of Water', `The measured amount of water is currently ${formattedAmount} ${this.unit}.`);
         fill(0);
         text(formattedAmount + " " + this.unit, width / 10, 0.8 * width);
 
