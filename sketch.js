@@ -31,8 +31,14 @@ function setup() {
   units.push(new unitSystem(100, 10, 'mL', 1)); // scale is pixels per major tic unit (10mL here)
   units.push(new unitSystem(296, 1, 'fl oz', 0.03381));
   units.push(new unitSystem(49.3, 1, 'tsp', 0.203));
-  flozBtn = createButton("convert to oz", width / 10, width);
-  tspBtn = createButton("convert to tsp", width / 10, 1.1 * width);
+  flozBtn = createButton("convert to oz", width / 10, width, 128 * width / 500, 32 * width / 500);
+  flozBtn.setStyle({
+    textSize: 16 * width / 500
+  });
+  tspBtn = createButton("convert to tsp", width / 10, 1.1 * width, 128 * width / 500, 32 * width / 500);
+  tspBtn.setStyle({
+    textSize: 16 * width / 500
+  });
   slider = createSliderV("slider", 0.7 * width, 0.6 * width, 0.06 * width, width / 2, 0, 350 * width / 500);
 }
 
